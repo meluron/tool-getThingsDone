@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e3f2fd;
+  color: #1e3c72;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.container {
+  width: 80%;
+  max-width: 900px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  color: #1e3c72;
+}
+.header p {
+  color: #1976d2;
+  font-size: 16px;
+}
+blockquote:focus {
+  outline: none;
+}
+.input-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+.input-box input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #1976d2;
+  font-size: 16px;
+  background-color: #e3f2fd;
+}
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+.task {
+  background-color: #bbdefb;
+  border: 1px solid #1976d2;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.task-checkbox {
+  margin-right: 20px;
+}
+.task-text {
+  font-size: 16px;
+  flex-grow: 1;
+  text-align: left;
+  border: none;
+  background: none;
+  outline: none;
+  font-weight: 600;
+}
+.task-text.strike-through {
+  text-decoration: line-through;
+  color: #999;
+}
+.task-actions {
+  display: flex;
+  align-items: center;
+}
+.task-delete {
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+  color: #e57373;
+  border: none;
+}
+.subtask-container {
+  display: none;
+  padding: 5px;
+  width: 80%;
+  margin-top: 10px;
+}
+.subtask-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #1976d2;
+}
+.subtask-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+.subtask {
+  background-color: #e1f5fe;
+  border: 1px solid #1976d2;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 1px 5px 1px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+}
+.subtask.dragging {
+  opacity: 0.5;
+}
+.subtask-checkbox {
+  margin-right: 10px;
+}
+.subtask-text {
+  flex-grow: 1;
+  text-align: left;
+  border: none;
+  background: none;
+  outline: none;
+}
+.subtask-text.strike-through {
+  text-decoration: line-through;
+  color: #999;
+}
+.subtask-delete {
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #e57373;
+  border: none;
+}
+.clear-all-btn {
+  background-color: #bbdefb;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border: none;
+  display: flex;             /* Use flexbox to align the icon and text */
+  align-items: center;       /* Vertically center the items */
+  gap: 10px;                 /* Add space between the icon and text */
+}
+.stopwatch {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.stopwatch-btn {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #4caf50;
+}
