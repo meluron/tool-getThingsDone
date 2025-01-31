@@ -25,7 +25,7 @@ body {
   color: #1976d2;
   font-size: 16px;
 }
-blockquote:focus {
+.beliefs:focus {
   outline: none;
 }
 .input-box {
@@ -139,6 +139,10 @@ blockquote:focus {
   color: #e57373;
   border: none;
 }
+.button-space{
+  display: flex;  
+  justify-content: flex-end; /* Aligns the button to the right */  
+}
 .clear-all-btn {
   background-color: #bbdefb;
   color: black;
@@ -165,4 +169,13 @@ blockquote:focus {
   background: none;
   border: none;
   color: #4caf50;
+}
+
+#current-date{
+  text-align: right;
+}
+.beliefs {
+  text-align: left;
+  font-weight: 600;
+  color: black !important; /* Force this rule */
 }

@@ -222,7 +222,7 @@ window.onload = () => {
   });
   
   // Restore blockquote content
-  const blockquote = document.querySelector('blockquote[contenteditable="True"]');
+  const blockquote = document.querySelector('.beliefs');
   const savedBlockquoteText = localStorage.getItem('blockquote');
   if (blockquote && savedBlockquoteText) {
     blockquote.innerText = savedBlockquoteText;
@@ -233,9 +233,6 @@ window.onload = () => {
     localStorage.setItem('blockquote', blockquote.innerText.trim());
   });
 };
-
-
-
 
 function clearAllTasks() {
   taskList.innerHTML = '';
