@@ -137,6 +137,8 @@ function toggleSubtaskCard(taskText) {
 
 function saveToLocalStorage() {
   const tasks = [];
+  
+  // Save tasks with subtasks and stopwatch data
   document.querySelectorAll('.task').forEach(task => {
     const taskText = task.querySelector('.task-text').innerText;
     const completed = task.querySelector('.task-checkbox').checked;
@@ -147,7 +149,14 @@ function saveToLocalStorage() {
     }));
     tasks.push({ text: taskText, completed, subtasks });
   });
+  
+  // Save blockquote content if present
+  const blockquote = document.querySelector('blockquote[contenteditable="True"]');
+  const blockquoteText = blockquote ? blockquote.innerText.trim() : '';
+  
+  // Store tasks and blockquote in local storage
   localStorage.setItem('tasks', JSON.stringify(tasks));
+  localStorage.setItem('blockquote', blockquoteText);
 }
 
 function addDragAndDropHandlers(item) {
@@ -183,6 +192,8 @@ document.addEventListener('input', function(event) {
 
 window.onload = () => {
   const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+  
+  // Restore tasks
   tasks.forEach(task => {
     addTask(task.text, task.completed, task.subtasks);
     
@@ -209,7 +220,21 @@ window.onload = () => {
       }
     });
   });
+  
+  // Restore blockquote content
+  const blockquote = document.querySelector('blockquote[contenteditable="True"]');
+  const savedBlockquoteText = localStorage.getItem('blockquote');
+  if (blockquote && savedBlockquoteText) {
+    blockquote.innerText = savedBlockquoteText;
+  }
+  
+  // Save blockquote changes to local storage on input
+  blockquote.addEventListener('input', () => {
+    localStorage.setItem('blockquote', blockquote.innerText.trim());
+  });
 };
+
+
 
 
 function clearAllTasks() {
